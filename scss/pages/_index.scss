@@ -12,6 +12,91 @@
             background-size: cover;
             height:100vh;
             width:100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            .page-top-title {
+                
+                
+            }
         }
+    }
+    
+    .about-section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height:300px;
+        width:100%;
+        padding:0 20px;
+        background-color: lightgray;
+        
+        @media screen and (min-width: 40em) {
+            /* styles for medium and onward */
+            height:600px;
+        }
+        
+        @media screen and (min-width: 64em) {
+            /* styles for large and onward only */
+            height:100vh;
+        }
+        
+        .about-description {
+            text-align: center;
+        }
+    }
+    
+    .works-section {
+        padding:20px;
+        overflow: auto;
+        background-color: lightblue;
+        
+        @media screen and (min-width: 64em) {
+            /* styles for large and onward only */
+            height:100%;
+        }
+        
+        .works-title {
+            margin-bottom:20px;
+            text-align: center;
+        }
+        
+        .works-panel {
+            margin-bottom:10px;
+            
+            .illustrator, .website, .photoshop {
+                height:500px;
+                
+                @media screen and (min-width: 64em) {
+                    /* styles for large and onward only */
+                    height:800px;
+                }
+            }
+        }
+    }
+    
+    .contact-section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height:300px;
+        width:100%;
+        padding:0 20px;
+        background-color: lightgray;
+        
+        @media screen and (min-width: 40em) {
+            /* styles for medium and onward */
+            height:600px;
+        }
+        
+        @media screen and (min-width: 64em) {
+            /* styles for large and onward only */
+            height:100vh;
+        }
+    }
+    
+    .footer {
+        text-align: center;
     }
 }

@@ -1791,11 +1791,91 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0; }
 
+h1 {
+  font-size: 20vw; }
+  @media screen and (min-width: 40em) {
+    h1 {
+      /* styles for medium and onward */
+      font-size: 15vw; } }
+  @media screen and (min-width: 64em) {
+    h1 {
+      /* styles for large and onward only */
+      font-size: 6vw; } }
+
+h3 {
+  font-size: 10vw; }
+  @media screen and (min-width: 40em) {
+    h3 {
+      /* styles for medium and onward */
+      font-size: 5vw; } }
+  @media screen and (min-width: 64em) {
+    h3 {
+      /* styles for large and onward only */
+      font-size: 7vw; } }
+
 .main .page-header .full-screen-top {
   background-image: url("../images/beach-sand.jpeg");
   background-position: center;
   background-size: cover;
   height: 100vh;
-  width: 100%; }
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+.main .about-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  width: 100%;
+  padding: 0 20px;
+  background-color: lightgray; }
+  @media screen and (min-width: 40em) {
+    .main .about-section {
+      /* styles for medium and onward */
+      height: 600px; } }
+  @media screen and (min-width: 64em) {
+    .main .about-section {
+      /* styles for large and onward only */
+      height: 100vh; } }
+  .main .about-section .about-description {
+    text-align: center; }
+.main .works-section {
+  padding: 20px;
+  overflow: auto;
+  background-color: lightblue; }
+  @media screen and (min-width: 64em) {
+    .main .works-section {
+      /* styles for large and onward only */
+      height: 100%; } }
+  .main .works-section .works-title {
+    margin-bottom: 20px;
+    text-align: center; }
+  .main .works-section .works-panel {
+    margin-bottom: 10px; }
+    .main .works-section .works-panel .illustrator, .main .works-section .works-panel .website, .main .works-section .works-panel .photoshop {
+      height: 500px; }
+      @media screen and (min-width: 64em) {
+        .main .works-section .works-panel .illustrator, .main .works-section .works-panel .website, .main .works-section .works-panel .photoshop {
+          /* styles for large and onward only */
+          height: 800px; } }
+.main .contact-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  width: 100%;
+  padding: 0 20px;
+  background-color: lightgray; }
+  @media screen and (min-width: 40em) {
+    .main .contact-section {
+      /* styles for medium and onward */
+      height: 600px; } }
+  @media screen and (min-width: 64em) {
+    .main .contact-section {
+      /* styles for large and onward only */
+      height: 100vh; } }
+.main .footer {
+  text-align: center; }
 
 /*# sourceMappingURL=main.css.map */

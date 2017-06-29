@@ -24,3 +24,31 @@ h1,h2,h3,h4,h5,h6 {
     padding:0;
 }
 
+h1 {
+    font-size: 20vw;
+    
+    @media screen and (min-width: 40em) {
+        /* styles for medium and onward */
+        font-size: 15vw;
+    }
+    
+    @media screen and (min-width: 64em) {
+        /* styles for large and onward only */
+        font-size: 6vw;
+    }
+}
+
+h3 {
+    font-size: 10vw;
+
+    @media screen and (min-width: 40em) {
+        /* styles for medium and onward */
+        font-size: 5vw;
+    }
+
+    @media screen and (min-width: 64em) {
+        /* styles for large and onward only */
+        font-size: 7vw;
+    }
+}
+
