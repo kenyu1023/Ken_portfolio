@@ -1878,4 +1878,16 @@ h3 {
 .main .footer {
   text-align: center; }
 
+.animation {
+  transition: all 0.8s ease;
+  transform: translate(0, 0);
+  opacity: 1; }
+
+.opacity-animation {
+  opacity: 0 !important; }
+
+.fadein-animation {
+  opacity: 0 !important;
+  transform: translate(0, 50%) !important; }
+
 /*# sourceMappingURL=main.css.map */
