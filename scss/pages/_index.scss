@@ -5,19 +5,66 @@
 .main {
     
     .page-header {
-        
+        width:100%;
         .full-screen-top {
             background-image: url("../images/beach-sand.jpeg");
             background-position: center;
             background-size: cover;
+            background-repeat: repeat-x;
             height:100vh;
             width:100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            
+
+            #hero {
+                //height:1000px;
+                overflow:hidden;
+                position:relative;
+                
+
+                .layer-bg {
+                    // background-image: url("../images/beach-sand.jpeg");
+                    // background-position: center;
+                    // background-size: cover;
+                    // height:100vh;
+                    // width:100%;
+                }
+
+                .layer {
+                    background-size: auto;
+                    background-repeat: no-repeat;
+                    width:100%;
+                    height:800px;
+                    position:fixed;
+                    // z-index: -1;
+                }
+                .layer-1 {
+                    background-image: url("http://pngimg.com/uploads/banana/banana_PNG842.png");
+                    background-position:50% 50%;
+                }
+                .layer-2 {
+                    background-image: url("http://pngimg.com/uploads/cloud/cloud_PNG24.png");
+                    background-position: bottom left;
+                }
+                .layer-3 {
+                    background-image: url("http://pngimg.com/uploads/cloud/cloud_PNG24.png");
+                    background-position: bottom right;
+                }
+                .layer-4 {
+                    background-image: url("http://pngimg.com/uploads/cloud/cloud_PNG24.png");
+                    background-position: top left;
+                }
+                .layer-5 {
+                    background-image: url("http://pngimg.com/uploads/cloud/cloud_PNG24.png");
+                    background-position: top right;
+                }
+            }
             
             .page-top-title {
-                
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                width:100%;
                 
             }
         }
@@ -49,29 +96,47 @@
     
     .works-section {
         padding:20px;
-        overflow: auto;
+        //overflow: auto;
         background-color: lightblue;
+        overflow: hidden;
         
         @media screen and (min-width: 64em) {
             /* styles for large and onward only */
-            height:100%;
+            height:100vh;
         }
         
         .works-title {
-            margin-bottom:20px;
+            margin-bottom:40px;
             text-align: center;
         }
         
         .works-panel {
             margin-bottom:10px;
             
+            
             .illustrator, .website, .photoshop {
-                height:500px;
+                height:400px;
                 
                 @media screen and (min-width: 64em) {
                     /* styles for large and onward only */
-                    height:800px;
+                    height:700px;
+                    
                 }
+            }
+            .illustrator {
+                background-image: url("https://s-media-cache-ak0.pinimg.com/736x/5c/05/1e/5c051e5503c7063148530ebf5037ae6f--hair-patterns-illustration-styles.jpg");
+                background-position: center center;
+                background-size: cover;
+            }
+            .website {
+                background-image: url("https://support.apple.com/library/content/dam/edam/applecare/images/en_US/imac/imac-target-display-mode-hero.jpg");
+                background-position: center center;
+                background-size: cover;
+            }
+            .photoshop {
+                background-image: url("http://wwwimages.adobe.com/content/dam/acom/en/products/photoshop/images/ps-stock-marquee-1440x660.jpg");
+                background-position: center center;
+                background-size: cover;
             }
         }
     }
