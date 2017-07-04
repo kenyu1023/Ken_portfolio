@@ -1,57 +1,127 @@
 
+// going back to top when you load page
 $(window).on('beforeunload', function() {
     $(window).scrollTop(0); 
 });
 
 
 $(function(){
-
-    
-
     var currentScrollPosition = 1;
     var animate = false;
     var timeoutSection1ani1,timeoutSection1ani2,timeoutSection1ani3;
+    var isWorksSection = false;
+    var isFixedMode = false;
 
      window.addEventListener('mousewheel',scrollToDiv);
 
     function scrollToDiv(event){
-        event.preventDefault();
-        if(!animate){
-            if(event.deltaY<0){
-                currentScrollPosition-=1;
-                if(currentScrollPosition<=0){
-                    currentScrollPosition = 1;
-                }else{
-                    animate = true;
-                    $('html, body').animate({scrollTop: $('#section'+currentScrollPosition).offset().top }, 1500, function(){
-                        animate = false;
-                        $('html, body').stop();
-                        if(currentScrollPosition == 1){
-                            resetAnimatSection1();
-                        }else if(currentScrollPosition == 2){
-                            startAnimateSection1();
-                        }else if(currentScrollPosition == 3){
-                            resetAnimatSection1();
-                        }
-                     });
+        if(isWorksSection){
+            // console.log(document.body.scrollTop);
+
+            var depth, i, layer, layers, movement, topDistance, translate3d;
+            topDistance = this.pageYOffset-$('#section3').offset().top;
+
+            if(this.pageYOffset > $('#worksContent').offset().top-41){
+                if(!isFixedMode){
+                    console.log('ads');
+                    isFixedMode = true;
+                    $('#worksContent').css({'position':'fixed','top':'45px','left':'0', 'width':'100%'});
                 }
-            }else{
-                currentScrollPosition+=1;
-                if(currentScrollPosition>=5){
-                    currentScrollPosition = 4;
+            }
+            if(this.pageYOffset < $('#section3').offset().top + 186){
+                $('#worksContent').css({'position':'relative'});
+                isFixedMode = false;
+            }  
+
+            console.log(topDistance);
+            layers = document.querySelectorAll("[data-type='parallaxworks']");
+            for (i = 0; i < layers.length; i++) {
+                layer = layers[i];
+                depth = layer.getAttribute('data-depth');
+                movement = (topDistance * depth);
+                if( i == 0 ){
+                    if(movement<($(window).width()*0.33)){
+                        // console.log(movement);
+                        translate3d = 'translate3d('+movement+'px,0,0)';
+                        layer.style.transform = translate3d;
+                    }
                 }else{
-                    animate = true;
-                    $('html, body').animate({scrollTop: $('#section'+currentScrollPosition).offset().top }, 1500, function(){
-                        animate = false;
-                        $('html, body').stop();
-                        if(currentScrollPosition == 1){
-                            resetAnimatSection1();
-                        }else if(currentScrollPosition == 2){
-                            startAnimateSection1();
-                        }else if(currentScrollPosition == 3){
-                            resetAnimatSection1();
-                        }
-                    });
+                    if(movement<($(window).width()*0.66)){
+                        // console.log(movement);
+                        translate3d = 'translate3d('+movement+'px,0,0)';
+                        layer.style.transform = translate3d;
+                        $('.works-category').each(function (){
+                            $(this).removeClass('active-show');
+                        });
+                    }else{
+                        layers[0].style.transform = 'translate3d('+$(window).width()*0.33+'px,0,0)';
+                        layers[1].style.transform = 'translate3d('+$(window).width()*0.66+'px,0,0)';
+
+                        $('.works-category').each(function (){
+                            $(this).addClass('active-show');
+                            $('#worksContent').css({'position':'relative'});
+                        });
+                    }
+                }
+                if(topDistance<0){
+                    layers[0].style.transform = 'translate3d(0,0,0)';
+                    layers[1].style.transform = 'translate3d(0,0,0)';
+                }
+            }
+
+            if(document.body.scrollTop<($('#section3').offset().top-10)){
+                isWorksSection = false;
+            }
+            if(document.body.scrollTop>($('#section4').offset().top-10)){
+                isWorksSection = false;
+            }
+        }else{
+            event.preventDefault();
+            if(!animate){
+                if(event.deltaY<0){
+                    currentScrollPosition-=1;
+                    if(currentScrollPosition<=0){
+                        currentScrollPosition = 1;
+                    }else{
+                        animate = true;
+                        $('html, body').animate({scrollTop: $('#section'+currentScrollPosition).offset().top }, 1500, function(){
+                            animate = false;
+                            $('html, body').stop();
+                            if(currentScrollPosition == 1){
+                                resetAnimatSection1();
+                            }else if(currentScrollPosition == 2){
+                                startAnimateSection1();
+                            }else if(currentScrollPosition == 3){
+                                resetAnimatSection1();
+                            }
+
+                            if(currentScrollPosition == 3){
+                                isWorksSection = true;
+                            }
+                        });
+                    }
+                }else{
+                    currentScrollPosition+=1;
+                    if(currentScrollPosition>=5){
+                        currentScrollPosition = 4;
+                    }else{
+                        animate = true;
+                        $('html, body').animate({scrollTop: $('#section'+currentScrollPosition).offset().top }, 1500, function(){
+                            animate = false;
+                            $('html, body').stop();
+                            if(currentScrollPosition == 1){
+                                resetAnimatSection1();
+                            }else if(currentScrollPosition == 2){
+                                startAnimateSection1();
+                            }else if(currentScrollPosition == 3){
+                                resetAnimatSection1();
+                            }
+
+                            if(currentScrollPosition == 3){
+                                isWorksSection = true;
+                            }
+                        });
+                    }
                 }
             }
         }

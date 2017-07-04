@@ -21,13 +21,13 @@
                 position:relative;
                 
 
-                .layer-bg {
-                    // background-image: url("../images/beach-sand.jpeg");
-                    // background-position: center;
-                    // background-size: cover;
-                    // height:100vh;
-                    // width:100%;
-                }
+                // .layer-bg {
+                //     // background-image: url("../images/beach-sand.jpeg");
+                //     // background-position: center;
+                //     // background-size: cover;
+                //     // height:100vh;
+                //     // width:100%;
+                // }
 
                 .layer {
                     background-size: auto;
@@ -95,33 +95,59 @@
     }
     
     .works-section {
-        padding:20px;
+        padding:20px 0 20px 0;
+        padding-bottom: 500px;
         //overflow: auto;
         background-color: lightblue;
         overflow: hidden;
         
+        
         @media screen and (min-width: 64em) {
             /* styles for large and onward only */
-            height:100vh;
+            height:1500px;
         }
         
         .works-title {
             margin-bottom:40px;
             text-align: center;
         }
+
+        .works-content{
+            position: relative;
+            .website-home,.photoshop-home{
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+        }
         
         .works-panel {
             margin-bottom:10px;
-            
             
             .illustrator, .website, .photoshop {
                 height:400px;
                 
                 @media screen and (min-width: 64em) {
                     /* styles for large and onward only */
-                    height:700px;
+                    height:50vh;
                     
                 }
+            }
+            .works-description{
+                @media screen and (min-width: 64em) {
+                    /* styles for large and onward only */
+                    height:40vh;
+                    opacity: 0;
+                    transition: all 0.7s ease;
+                }
+            }
+
+            .works-animation{
+                transition: all 1.5s ease;
+            }
+
+            .works-description.active-show{
+                opacity: 1;
             }
             .illustrator {
                 background-image: url("https://s-media-cache-ak0.pinimg.com/736x/5c/05/1e/5c051e5503c7063148530ebf5037ae6f--hair-patterns-illustration-styles.jpg");
@@ -138,6 +164,7 @@
                 background-position: center center;
                 background-size: cover;
             }
+            
         }
     }
     
