@@ -1,17 +1,109 @@
 .main {
-    .bg-full-img {
+    background-image: url('../images/about-demo-black.jpg');
+        background-position:right;
+        background-size:cover;
+        background-attachment: fixed;
+        width:100%;
+        height: 100vh;
+        
+    h3 {
+        font-size: $header-font;
+        padding-bottom: $header-font-padding-bottom ;
+        @media screen and (max-width: 39.9375em) {
+        /* styles for small only */
+        font-size: $header-font-for-small;
+        }
+    }
+    // page-top //
+    .bg-full-img-top {
         background-image: url('../images/about-demo-black.jpg');
-        background-position: center;
-        background-size: cover;
+        background-position:right;
+        background-size:cover;
+        background-attachment: fixed;
         width:100%;
         height: 100vh;
         
         .about-box {
-            width:40%;
-            
-            .about-desc {
-                color:white;
+            height:100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+                .about-desc {
+                    color:white;
+                    font-size: $about-p-size;
+                    line-height: $about-p-line-height;
+                    padding:$about-padding;
+
+                    @media screen and (max-width: 39.9375em) {
+                     /* styles for small only */
+                     font-size: $about-p-size-for-small;
+                    }
+                    @media screen and (min-width: 40em) and (max-width: 63.9375em) {
+                    /* styles for medium only */
+                    font-size: $about-p-size-for-medium;
+                    width:60%;
+                    }
+                }
             }
         }
+        /////////////////////////
+
+        // I design, I develop //
+        .bg-full-img-middle {
+                background-image: url('../images/about-demo-black.jpg');
+                background-attachment: fixed;
+                background-position:right;
+                background-size:cover;
+                width:100%;
+                height: 100vh;
+                
+
+                .design-develop {
+                    color:white;
+                    font-size: $design-develop-p-font;
+                    line-height: $about-p-line-height;
+                    
+                    ;
+                    @media screen and (max-width: 39.9375em) {
+                    /* styles for small only */
+                    font-size: $about-p-size-for-small;
+                    }
+                    @media screen and (min-width: 40em) and (max-width: 63.9375em) {
+                    /* styles for medium only */
+                    font-size: $about-p-size-for-medium;
+                    }
+                    .design, .develop {
+                        height:50vh;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+            
+                        .design-desc, .develop-desc {
+                             padding:$about-padding;
+                        }
+                    }
+                }
+            }
+
+            .bg-full-img-bottom {
+                background-image: url('../images/about-demo-black.jpg');
+                background-position:right;
+                background-size:cover;
+                background-attachment: fixed;
+                width:100%;
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .my-hobby-video {
+                    display: flex;
+                    align-content: center;
+                    align-items: center;
+                    justify-content: center;
+                    height:50%;
+                    width:50%;
+                    background-color: grey;
+                }
+            }
     }
-}

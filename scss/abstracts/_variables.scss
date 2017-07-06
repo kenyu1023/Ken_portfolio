@@ -69,3 +69,17 @@ $breakpoints: (
 /// @example scss - When using a CDN
 ///   $base-url: 'http://cdn.example.com/assets/';
 $base-url: '/assets/' !default;
+
+
+// about section 
+$about-p-size : 1.8vw;
+$about-p-size-for-small : 4vw;
+$about-p-size-for-medium : 2vw;
+$about-p-line-height : 1.2;
+$about-p-width : 60vw;
+$about-padding : 5vw;
+$header-font : 4vw;
+$header-font-for-small : 8vw;
+$header-font-padding-bottom : 1.5vw;
+$design-develop-p-font : 1.2vw;
+
