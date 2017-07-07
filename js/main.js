@@ -1,3 +1,27 @@
+// nav animation //
+
+var isNav = 0;
+
+$("#openNav").click(function(){
+    $(this).animate({"opacity":"0"});
+    $(".nav-section").animate({"height":"30vw"},"ease");
+    $(".nav-ul").css("opacity","1");
+    $("body").css("overflow","hidden");
+    isNav = 1;
+});
+
+$("#closeNav").click(function(){
+    if(isNav = 1){
+        $("#openNav").animate({"opacity":"1"});
+        $(".nav-section").animate({"height":"0"});
+        $(".nav-ul").css("opacity","0");
+        $("body").css("overflow","auto");
+        isNav = 0;
+    }
+});
+
+///////////////////
+
 
 // going back to top when you load page
 $(window).on('beforeunload', function() {

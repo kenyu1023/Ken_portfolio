@@ -53,12 +53,76 @@ h3 {
 }
 
 //////////////////////////////////////////
-.nav{
-    z-index: 10;
-        .open-nav {
-            font-size:30vw;
-        }
-    }
+//  <div class="nav-section">
+//                     <div class="open-nav" id="openNav">&#8801</div>
+//                         <ul class="nav-ul">
+//                             <li><a href="index.html">nav1</li>
+//                             <li><a href="about.html">nav1</li>
+//                             <li><a href="#">nav1</li>
+//                         </ul>
+//                 </div>
 
+.nav-section{
+   background-color: lightblue;
+   width:100%;
+    text-align: center;
+    //transition:1s all ease;
+    overflow: hidden;
+    position: fixed;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    height: 0;
+    z-index: 100;
+        .open-nav {
+            font-size:5vw;
+            width: 100%;
+            position:fixed;
+            display: flex;
+            justify-content: center;
+            
+        }
+    
+
+        .nav-ul {
+            opacity: 0;
+            list-style: none;
+            margin:0;
+            padding:0;
+            align-self: center;
+
+            .close-nav {
+                font-size:5vw;
+                width: 100%;
+                text-decoration: none;
+                text-decoration-line: none;
+                // position:fixed;
+                // display: flex;
+                // justify-content: center;
+                
+        }
+            
+
+            li {
+                padding:2vw 0;
+                flex:1;
+
+                a {
+                    font-size: 2vw;
+                    text-decoration: none;
+
+                    @media screen and (max-width: 39.9375em) {
+                    /* styles for small only */
+                    font-size: $nav-a-font-for-small;
+                    }
+                    @media screen and (min-width: 40em) and (max-width: 63.9375em) {
+                     /* styles for medium only */
+                    font-size: $nav-a-font-for-madium;
+                    }
+                }
+            }
+        }
+        
+    }
     
 
