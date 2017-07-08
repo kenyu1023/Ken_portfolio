@@ -74,24 +74,59 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        height:300px;
-        width:100%;
-        padding:0 20px;
-        background-color: lightgray;
+
+            .overlay {
+                background-color: black;
+                width:100%;
+                z-index: -200;
+                
+            }
+        // height:300px;
+        // width:100%;
+        // padding:0 20px;
+        // background-color: lightgray;
         
-        @media screen and (min-width: 40em) {
-            /* styles for medium and onward */
-            height:600px;
-        }
+        // @media screen and (min-width: 40em) {
+        //     /* styles for medium and onward */
+        //     height:600px;
+        // }
         
-        @media screen and (min-width: 64em) {
-            /* styles for large and onward only */
+        // @media screen and (min-width: 64em) {
+        //     /* styles for large and onward only */
+        //     height:100vh;
+        // }
+        .about-video {
+            width:100%;
             height:100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            opacity:0.7;
+            
+
+            video {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                min-width: 100%;
+                min-height: 100%;
+                width: auto;
+                height: auto;
+                z-index: -100;
+                transform: translateX(-50%) translateY(-50%);
+                object-fit: cover;
+            
+            }
+
+             .about-description {
+                 color: white;
+                 padding-left:1.5vw;
+                 z-index: 100;
+            }
+
         }
         
-        .about-description {
-            text-align: center;
-        }
+       
     }
     
     .works-section {
@@ -167,11 +202,23 @@
             
         }
     }
+    //     <div class="contact-section" id="section4">
+    //        <div class="contact">
+    //            <h3 id="section4ani1">Contact Me!</h3>
+    //            <div class="large-6 columns">
+    //                <img src="images/apple-256-black.png" alt="#" />
+    //            </div>
+    //            <ul class="contact-list large-6 columns">
+    //                <li><h1>Kenyu Sauraba</h1></li>
+    //                <li><h3>kenyu.sakuraba.1023@gmail.com</h3></li>
+    //            </ul>
+    //        </div>
+    //    </div>
     
     .contact-section {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        // display: flex;
+        // align-items: center;
+        // justify-content: center;
         height:300px;
         width:100%;
         padding:0 20px;
@@ -185,6 +232,14 @@
         @media screen and (min-width: 64em) {
             /* styles for large and onward only */
             height:100vh;
+        }
+        .contact {
+            text-align: center;
+            padding:5vw 0;
+
+            .contact-list {
+                list-style: none;
+            }
         }
     }
     
