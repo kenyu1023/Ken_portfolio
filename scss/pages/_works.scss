@@ -1,0 +1,60 @@
+// <div class="works-main">
+//     <div class="works-title">
+//         <h1>My Works</h1>
+//     </div>
+    
+//     <div class="website-title">Mock Sites</div>
+//         <div class="website clearfix">
+//             <div class="works-panel large-6 columns">
+//                 <img src="images/apple-256-black.png"  alt="#" />
+//             </div>
+//             <div class="works-panel large-6 columns">
+//                 <img src="images/apple-256-black.png"  alt="#" />
+//             </div>
+//             <div class="works-panel large-6 columns">
+//                 <img src="images/apple-256-black.png" alt="#" />
+//             </div>
+//          </div>
+
+//     <div class="website-title">Illustrator</div>
+//         <div class="illustrator clearfix">
+//             <div class="works-panel large-6 columns">
+//                 <img src="images/apple-256-black.png"  alt="#" />
+//             </div>
+//             <div class="works-panel large-6 columns">
+//                 <img src="images/apple-256-black.png"  alt="#" />
+//             </div>
+//             <div class="works-panel large-6 columns">
+//                 <img src="images/apple-256-black.png" alt="#" />
+//             </div>
+//     </div>
+
+//     <div class="website-title">After Effct</div>
+//         <div class="after-effect clearfix">
+//             <div class="works-panel large-6 columns">
+//                 <img src="images/apple-256-black.png"  alt="#" />
+//             </div>
+//             <div class="works-panel large-6 columns">
+//                 <img src="images/apple-256-black.png"  alt="#" />
+//             </div>
+//             <div class="works-panel large-6 columns">
+//                 <img src="images/apple-256-black.png" alt="#" />
+//             </div>
+//         </div>
+
+.works-main {
+
+    .works-panel {
+        display: flex;
+        justify-content: center;
+  
+        
+        .works-panel-img {
+            height: 30vw;
+            padding:3vw;
+        }
+
+
+    }
+
+}
